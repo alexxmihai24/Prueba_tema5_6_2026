@@ -1,4 +1,5 @@
 
+import ThemeToggle from "@/components/ThemeToggle";
 import "./globals.css";
 
 export const metadata = {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body>
         {children}
+        <ThemeToggle />
       </body>
     </html>
   );
