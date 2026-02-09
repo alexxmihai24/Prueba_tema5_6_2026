@@ -1,0 +1,35 @@
+/* ============================================================ */
+/* EJERCICIO 1: Estilos básicos */
+/* ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2563eb;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #64748b;
+}

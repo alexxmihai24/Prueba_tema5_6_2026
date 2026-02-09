@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// CONDUCTOR — 1:N — VIAJE — N:M — PASAJERO
+
+model Conductor {
+  id       Int     @id @default(autoincrement())
+  nombre   String
+  telefono String
+  viajes   Viaje[]
+}
+
+model Viaje {
+  id            Int             @id @default(autoincrement())
+  fechaHora     DateTime
+  origen        String
+  destino       String
+  precioBillete Float
+  conductorId   Int
+  conductor     Conductor       @relation(fields: [conductorId], references: [id])
+  pasajeros     ViajePasajero[]
+}
+
+model Pasajero {
+  id      Int             @id @default(autoincrement())
+  nombre  String
+  bonobus Boolean
+  viajes  ViajePasajero[]
+}
+
+model ViajePasajero {
+  viajeId    Int
+  pasajeroId Int
+  viaje      Viaje    @relation(fields: [viajeId], references: [id], onDelete: Cascade)
+  pasajero   Pasajero @relation(fields: [pasajeroId], references: [id], onDelete: Cascade)
+
+  @@id([viajeId, pasajeroId])
+}
