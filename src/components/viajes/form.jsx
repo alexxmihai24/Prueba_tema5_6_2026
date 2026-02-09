@@ -1,5 +1,6 @@
 'use client'
 import { useActionState, useEffect, useId } from "react"
+import { toast } from "sonner"
 
 export default function FormViaje({
     action,
@@ -16,11 +17,11 @@ export default function FormViaje({
 
     useEffect(() => {
         if (state.success) {
-            alert(state.success)
+            toast.success(state.success)
             document.getElementById(formId).closest('dialog').close()
         }
         if (state.error) {
-            alert(state.error)
+            toast.error(state.error)
         }
     }, [state, formId])
 

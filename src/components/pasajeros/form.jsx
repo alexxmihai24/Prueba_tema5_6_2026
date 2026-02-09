@@ -1,5 +1,6 @@
 'use client'
 import { useActionState, useEffect, useId } from "react"
+import { toast } from "sonner"
 
 export default function FormPasajero({ action, pasajero, disabled = false, textSubmit = "Enviar" }) {
     const formId = useId()
@@ -7,11 +8,11 @@ export default function FormPasajero({ action, pasajero, disabled = false, textS
 
     useEffect(() => {
         if (state.success) {
-            alert(state.success)
+            toast.success(state.success)
             document.getElementById(formId).closest('dialog').close()
         }
         if (state.error) {
-            alert(state.error)
+            toast.error(state.error)
         }
     }, [state, formId])
 

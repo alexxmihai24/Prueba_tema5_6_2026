@@ -1,5 +1,6 @@
 'use client'
 import { useActionState, useEffect, useId } from "react"
+import { toast } from "sonner"
 
 export default function FormConductor({ action, conductor, disabled = false, textSubmit = "Enviar" }) {
     const formId = useId()
@@ -8,11 +9,11 @@ export default function FormConductor({ action, conductor, disabled = false, tex
 
     useEffect(() => {
         if (state.success) {
-            alert(state.success)
+            toast.success(state.success)
             document.getElementById(formId).closest('dialog').close()
         }
         if (state.error) {
-            alert(state.error)
+            toast.error(state.error)
         }
     }, [state, formId])
 

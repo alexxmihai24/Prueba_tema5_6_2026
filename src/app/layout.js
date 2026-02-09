@@ -1,5 +1,6 @@
 
 import ThemeToggle from "@/components/ThemeToggle";
+import { Toaster } from 'sonner'
 import "./globals.css";
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <ThemeToggle />
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
