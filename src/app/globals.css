@@ -1,3 +1,7 @@
+/* ============================================================ */
+/* Estilos Globales - Version Original Colorida */
+/* ============================================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +16,20 @@ body {
   min-height: 100vh;
 }
 
+/* --- Layout --- */
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* --- Header Home --- */
 .home-header {
   text-align: center;
   margin-bottom: 50px;
@@ -26,6 +38,7 @@ body {
 .home-header h1 {
   font-size: 2.5rem;
   color: #2563eb;
+  /* Azul brillante */
   margin-bottom: 10px;
 }
 
@@ -34,6 +47,7 @@ body {
   font-size: 1.2rem;
 }
 
+/* --- Grid Home --- */
 .home-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -60,13 +74,17 @@ body {
   border-color: #8b5cf6;
 }
 
+/* Violeta */
 .viajes-card:hover {
   border-color: #06b6d4;
 }
 
+/* Turquesa */
 .pasajeros-card:hover {
   border-color: #f97316;
 }
+
+/* Naranja */
 
 .card-icon {
   font-size: 4rem;
@@ -83,12 +101,8 @@ body {
   color: #64748b;
 }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 20px;
-}
 
+/* --- Headers de Páginas --- */
 .page-container h1 {
   font-size: 2rem;
   color: #1e293b;
@@ -105,6 +119,21 @@ body {
   color: #2563eb;
 }
 
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.page-header h2 {
+  color: #1e293b;
+}
+
+
+/* --- Listas --- */
 .lista-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -117,6 +146,8 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .lista-card:hover {
@@ -137,6 +168,7 @@ body {
 
 .card-body {
   padding: 20px;
+  flex-grow: 1;
 }
 
 .card-body p {
@@ -154,11 +186,14 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  background: white;
 }
 
+
+/* --- Botones --- */
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
@@ -166,6 +201,16 @@ body {
   cursor: pointer;
   border: none;
   font-size: 0.9rem;
+  text-align: center;
+}
+
+.btn-insertar {
+  background: #10b981;
+  color: white;
+}
+
+.btn-insertar:hover {
+  background: #059669;
 }
 
 .btn-ver {
@@ -175,6 +220,24 @@ body {
 
 .btn-ver:hover {
   background: #1d4ed8;
+}
+
+.btn-editar {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #d97706;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background: #dc2626;
 }
 
 .btn-volver {
@@ -187,6 +250,145 @@ body {
   background: #475569;
 }
 
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+
+/* --- Modales --- */
+.modal-dialog {
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  color: #1e293b;
+  position: relative;
+}
+
+.modal-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-dialog h3 {
+  margin-bottom: 20px;
+  color: #1e293b;
+  text-align: center;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #64748b;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.2);
+  color: #ef4444;
+}
+
+
+/* --- Formularios --- */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background: white;
+  color: #1e293b;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+  opacity: 0.7;
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+/* Checkbox group */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+}
+
+.checkbox-item label {
+  cursor: pointer;
+  color: #334155;
+}
+
+
+/* --- Detalle Item --- */
 .item-container {
   background: white;
   border-radius: 12px;
@@ -222,6 +424,7 @@ body {
 .item-body a {
   color: #2563eb;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .item-body a:hover {
@@ -235,7 +438,7 @@ body {
 }
 
 .item-section h3 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #1e293b;
 }
 
@@ -245,10 +448,17 @@ body {
 }
 
 .item-list li {
-  padding: 10px 15px;
-  background: #f1f5f9;
+  padding: 12px 15px;
+  background: #f8fafc;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+.item-list li:hover {
+  transform: translateX(5px);
+  border-color: #cbd5e1;
 }
 
 
@@ -257,6 +467,15 @@ body {
   padding: 40px;
   color: #64748b;
   font-size: 1.2rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.relational-group label {
+  margin-top: 10px;
+  color: #475569;
 }
 
 @media (max-width: 768px) {

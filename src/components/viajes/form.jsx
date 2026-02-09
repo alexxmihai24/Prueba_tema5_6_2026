@@ -87,10 +87,10 @@ export default function FormViaje({
                 />
             </div>
 
-            <div className="form-group">
-                <label>Conductor</label>
+            <div className="form-group relational-group">
+                <label>Conductor Asignado:</label>
                 <select name="conductorId" defaultValue={viaje?.conductorId || ''} disabled={disabled} required>
-                    <option value="">Selecciona un conductor</option>
+                    <option value="">-- Selecciona un conductor --</option>
                     {conductores.map(conductor => (
                         <option key={conductor.id} value={conductor.id}>
                             {conductor.nombre}
@@ -99,8 +99,8 @@ export default function FormViaje({
                 </select>
             </div>
 
-            <div className="form-group">
-                <label>Pasajeros</label>
+            <div className="form-group relational-group">
+                <label>Pasajeros del Viaje:</label>
                 <div className="checkbox-group">
                     {pasajeros.map(pasajero => (
                         <div key={pasajero.id} className="checkbox-item">
