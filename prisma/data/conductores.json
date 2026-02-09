@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan Pérez",
+        "telefono": "611223344"
+    },
+    {
+        "id": 2,
+        "nombre": "María González",
+        "telefono": "655667788"
+    },
+    {
+        "id": 3,
+        "nombre": "Antonio Ruiz",
+        "telefono": "699001122"
+    }
+]

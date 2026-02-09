@@ -3,6 +3,7 @@ import { useActionState, useEffect, useId } from "react"
 
 export default function FormConductor({ action, conductor, disabled = false, textSubmit = "Enviar" }) {
     const formId = useId()
+    // EJERCICIO 9: Uso de useActionState en componente cliente
     const [state, faction, isPending] = useActionState(action, {})
 
     useEffect(() => {

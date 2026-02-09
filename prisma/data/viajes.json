@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "fechaHora": "2024-02-15T08:30:00.000Z",
+        "origen": "Plaza Mayor",
+        "destino": "Hospital",
+        "precioBillete": 1.5,
+        "conductorId": 1
+    },
+    {
+        "id": 2,
+        "fechaHora": "2024-02-15T10:00:00.000Z",
+        "origen": "Estación",
+        "destino": "Centro Comercial",
+        "precioBillete": 2.0,
+        "conductorId": 2
+    }
+]

@@ -87,6 +87,7 @@ export default function FormViaje({
                 />
             </div>
 
+            {/* EJERCICIO 8: Relación 1:N con Conductor (Select) */}
             <div className="form-group relational-group">
                 <label>Conductor Asignado:</label>
                 <select name="conductorId" defaultValue={viaje?.conductorId || ''} disabled={disabled} required>
@@ -99,6 +100,7 @@ export default function FormViaje({
                 </select>
             </div>
 
+            {/* EJERCICIO 8: Relación N:M con Pasajeros (Checkbox) */}
             <div className="form-group relational-group">
                 <label>Pasajeros del Viaje:</label>
                 <div className="checkbox-group">
